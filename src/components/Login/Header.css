@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+.Header{
+    margin: 0;
+    height: 20vh;
+    background-color: rgb(179, 152, 184);
+    text-align: center;
+}
+
+.Header__line{
+    font-family: 'Amatic SC', cursive;
+    font-size:xxx-large;
+    color: white;
+    padding-top: 40px;
+    padding-left: 90vh;
+}

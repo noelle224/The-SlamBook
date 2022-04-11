@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+.Slam__body{
+    display: flex;
+  }
+  
+  .Slam__image{
+    margin: 40px;
+  }
+  
+  .Slam__Card{
+    margin-top: 40px;
+    background-color: white;
+    height: 58vh;
+    width: 40vh;
+    object-fit: contain;
+  }
+  .line{
+    padding-top: 140px;
+    padding-left: 25px;
+    font-family: 'Amatic SC', cursive;
+    font-size:xx-large;
+    color: rgb(94, 24, 131);
+  }
+  
+  .Slam__login{
+    margin-left: 45px ;
+    margin-top: 40px;
+    background-color: white;
+    height: 63vh;
+    width: 80vh;
+    background-color:thistle;
+  }
+  
+  #fname{
+    margin: 20px;
+    width: 85%;
+    padding: 10px;
+  }
+  
+  #lname{
+    margin: 20px;
+    width: 85%;
+    padding: 10px;
+  }
+  .Email{
+    font-family: 'Amatic SC', cursive;
+    font-size:x-large;
+    color: rgb(94, 24, 131);
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+   p{
+    color: rgb(94, 24, 131);
+    margin-left: 250px; 
+    margin-top: 5px;
+   }

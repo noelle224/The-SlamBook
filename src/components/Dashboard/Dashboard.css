@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+.Dashboard__image{
+    margin: 40px;
+    display: flex;
+}
+
+.Dashboard__image__icon{
+    height: 40vh;
+    width: 40vh;
+}
+
+.Dashboard__quote{
+    margin-left: 40px;
+    background-color: rgb(255, 255, 255);
+    width: 60vh;
+    padding: 10px;
+    padding-top: 30px;
+}
+
+.Dashboard__quote2{
+    margin-left: 40px;
+    width: 60vh;
+    padding: 10px;
+    padding-top: 30px;
+}
+
+h3{
+    font-family: 'Amatic SC', cursive;
+    font-size:xx-large;
+    color: rgb(94, 24, 131);
+}
