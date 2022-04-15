@@ -5,13 +5,16 @@ import { Button } from '@mui/material';
 import { padding } from '@mui/system';
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase';
+import { BrowserRouter as Router, Switch, Route, BrowserRouter, Routes } from 'react-router-dom'
 
 
-function Login() {
+
+
+function Login(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const[user, setUser]= useState(null);
-  const[logged, islogged] = useState(false);
+  const[logged, islogged] = useState(false); // to do : need to pass this to all the pages using context
 
   //To see if the user is logged-in, changing the displayName to the first letter of the email.
 
@@ -20,6 +23,7 @@ function Login() {
       if(authUser)
       {
           islogged(true);
+          props.ongetLogin(logged);
           console.log(authUser);
           setUser(authUser);
           if(authUser.displayName){
@@ -32,6 +36,7 @@ function Login() {
       }
       else{
         setUser(null);
+        islogged(false);
       }
     })
   
@@ -62,9 +67,12 @@ function Login() {
       event.preventDefault();
     }
 
+
     auth.signInWithEmailAndPassword(email, password).catch(
       (error) => alert(error.message)
     )
+
+    
 
   }
 
@@ -87,7 +95,7 @@ function Login() {
         <input type="text" id="lname" name="lname" value={password} onChange={Capturecheckpass}/>
         
         {/* Applying Conditional Linking*/}
-  
+        
         <Link to='/dashboard43dghs'>
 
         <Button variant="contained" style={

@@ -1,26 +1,47 @@
 import React, {useState, useEffect} from 'react'
 import { db } from '../../firebase'
 import Pagecontainer from './Pagecontainer';
+import { auth } from '../../firebase';
+import { useNavigate } from 'react-router-dom';
+import firebase from 'firebase/compat/app';
 
 function Seepages() {
 
+  const navigate = useNavigate();
+  useEffect(() => {
+
+    firebase.auth().onAuthStateChanged(user => {
+      if (user){
+        console.log(user)
+      }
+      else
+      {
+        return navigate('/')
+      }  
+   })
+  }, );
+
+  console.log(auth.currentUser);
+
+
   const initialvalue = [{
    Data : {
-      Name : "Vikash",
-     Nicknameforme : "chirah",
-     Relation:"Father",
-     band:"none",
-     blame:"yes, on archi",
-    dead:"none",
-    first:"daughter",
-    lie:"none",
-    message:"none",
-    movie:"none",
-    past:"no past",
-    peaceful:"birth",
-    song:"old",
-   think:"family",
-   weakness:"daughters"
+    R :" Redirecting to your pages soon", 
+    Name : "your friends name",
+     Nicknameforme : "Their nickname",
+     Relation:"Friend",
+     band:"their favourite band",
+     blame:"their answer",
+    dead:"their answer",
+    first:"their answer",
+    lie:"their answer",
+    message:"their answer",
+    movie:"their answer",
+    past:"their answer",
+    peaceful:"their answer",
+    song:"their answer",
+   think:"their answer",
+   weakness:"their answer"
     }
   }
   ]

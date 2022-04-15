@@ -214,6 +214,7 @@ function Generate() {
         <Button variant="contained" style={
             {backgroundColor:'rgb(94, 24, 131)', marginLeft : '170px', marginTop : '10px', width : '180px'}
             }
+            disabled={!one}
             onClick={submithandler}
             >Submit</Button>
 

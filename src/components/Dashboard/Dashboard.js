@@ -1,12 +1,32 @@
 import { Button } from '@mui/material'
-import React from 'react'
+import React , {useEffect} from 'react'
 import Header from '../Login/Header'
 import './Dashboard.css'
 import { Link } from 'react-router-dom'
 import { auth } from '../../firebase'
+import { useNavigate  } from "react-router-dom";
+import firebase from 'firebase/compat/app';
 
 function Dashboard() {
 
+  const navigate = useNavigate();
+  useEffect(() => {
+
+    //if (!auth.currentUser) return navigate("/");
+
+    firebase.auth().onAuthStateChanged(user => {
+      if (user){
+        console.log(user)
+      }
+      else
+      {
+        return navigate('/')
+      }  
+   })
+  
+  }, );
+
+  console.log(auth.currentUser);
 
   const Logout = () => {
     auth.signOut();
@@ -14,6 +34,7 @@ function Dashboard() {
   }
 
   return (
+    
     <div className='Dashboard'>
     <Header/>
     <div className='Dashboard__image'>
@@ -25,7 +46,7 @@ function Dashboard() {
     <div className='Dashboard__quote2'>
     <h3>To get a page filled, Click on Generate</h3>
 
-   <Link to= '/form'>
+   <Link to= '/form3qaewrstf'>
    <Button variant="contained" style={
     {backgroundColor:'rgb(94, 24, 131)', marginLeft : '70px', marginTop: '20px', marginBottom:'10px', height : '10vh', width : '30vh'}
     }> Generate Pages </Button>
